@@ -18,6 +18,7 @@ int fibo(int round){
     return c;
 }
 
+//dp array method
 int fiboDP(int round){
     if(round <= 2){
         return 1;
@@ -33,12 +34,23 @@ int fiboDP(int round){
         arr[i] = arr[i-1] + arr[i-2];
     }
     return arr[round-1];
-    
 }
+
+//recursion method
+int fiboRecursion(int num){
+    if(num <= 2){
+        return 1;
+    }
+    return fiboRecursion(num-1) + fiboRecursion(num-2);
+}
+
 int main(){
     int ans1 = fibo(8);
     int ans = fiboDP(8);
-    printf("%d\n", ans);
+    int ans3 = fiboRecursion(8);
+    printf("var swap: %d", ans1);
+    printf("dynamic prodramming %d\n", ans);
+    printf("recursion: %d\n", ans3);
     return 0;
 }
 
